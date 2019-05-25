@@ -8,7 +8,7 @@ extern void beginIRremote(int pin);
 extern void addPressHandlerIRremote(unsigned long code, __ir_handler_type func);
 extern void addReleaseHandlerIRremote(unsigned long code, __ir_handler_type func);
 
-extern void handelIRremote();
+extern void handleIRremote();
 extern unsigned long getPressedIRremote();
 extern bool isReleasedIRremote(unsigned long code);
 

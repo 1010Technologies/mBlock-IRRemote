@@ -50,11 +50,12 @@ void addReleaseHandlerIRremote(unsigned long code, __ir_handler_type func){
 	__ir_handler[0][__ir_handler_count++] = NULL;
 }
 
-void handelIRremote(){
+void handleIRremote(){
 	
 	if (__irrecv->decode(&__results)) {
 		__prev_millis =  millis();
-		if(__results.value == REPEAT){
+		if(	__results.value == REPEAT || 
+			__last_code != REPEAT){ // this code can't handle pressing of two buttons before releasing the first one
 			__irrecv->resume(); // Receive the next value
 			return;
 		}

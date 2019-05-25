@@ -25,7 +25,7 @@ void loop(){
       Serial.println(value);
     }
     
-    handelIRremote();
+    handleIRremote();
     
 }
 
